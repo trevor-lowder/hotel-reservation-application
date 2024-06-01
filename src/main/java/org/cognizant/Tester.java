@@ -1,5 +1,9 @@
 package org.cognizant;
 
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+
 import api.AdminResource;
 import api.HotelResource;
 import model.Customer;
@@ -7,8 +11,6 @@ import model.IRoom;
 import model.Reservation;
 import model.Room;
 import model.RoomType;
-
-import java.util.*;
 
 public class Tester {
     public static void main(String[] args) {
@@ -101,13 +103,6 @@ public class Tester {
         // Test getCustomer method
         Customer customer = adminResource.getCustomer("john.doe@example.com");
         System.out.println("Retrieved Customer: " + customer);
-
-        // Test addRoom method
-        List<IRoom> roomsToAdd = new ArrayList<>();
-        roomsToAdd.add(new Room("101", 100.0, RoomType.SINGLE));
-        roomsToAdd.add(new Room("102", 150.0, RoomType.DOUBLE));
-        adminResource.addRoom(roomsToAdd);
-        System.out.println("Rooms added successfully.");
 
         // Test getAllRooms method
         Collection<IRoom> allRooms = adminResource.getAllRooms();

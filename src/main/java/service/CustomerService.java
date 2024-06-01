@@ -1,10 +1,10 @@
 package service;
 
-import model.Customer;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import model.Customer;
 
 public class CustomerService {
     private static CustomerService customerService;

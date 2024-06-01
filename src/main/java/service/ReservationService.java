@@ -1,10 +1,18 @@
 package service;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import model.Customer;
 import model.IRoom;
 import model.Reservation;
-
-import java.util.*;
 
 public class ReservationService {
     private static ReservationService reservationService;
@@ -30,9 +38,9 @@ public class ReservationService {
     }
 
     public Reservation reserveRoom(Customer customer, IRoom room, Date checkInDate, Date checkOutDate){
-        Reservation reservation = new Reservation(customer, room, checkInDate, checkOutDate);
-        reservations.computeIfAbsent(customer, k -> new ArrayList<>()).add(reservation);
-        return reservation;
+            Reservation reservation = new Reservation(customer, room, checkInDate, checkOutDate);
+            reservations.computeIfAbsent(customer, k -> new ArrayList<>()).add(reservation);
+            return reservation;
     }
 
     public Collection<IRoom> findRooms(Date checkInDate, Date checkOutDate) {

@@ -2,11 +2,12 @@ package org.cognizant;
 
 import api.HotelResource;
 import model.Room;
+import model.FreeRoom;
 import model.RoomType;
 
 import java.util.Calendar;
 
-public class Main {
+public class HotelApplication {
     public static void main(String[] args) {
         initializeData();
         MainMenu.main(args);
@@ -21,11 +22,15 @@ public class Main {
 
         // Create rooms
         Room room101 = new Room("101", 75.0, RoomType.SINGLE);
+        Room room111 = new Room("111", 75.0, RoomType.SINGLE);
         Room room201 = new Room("201", 150.0, RoomType.DOUBLE);
-        Room room777 = new Room("777", 0.0, RoomType.SINGLE);
+        Room room301 = new Room("301", 145.0, RoomType.DOUBLE);
+        Room room777 = new FreeRoom("777", 80.0, RoomType.SINGLE);
 
         hotelResource.getReservationService().addRoom(room101);
+        hotelResource.getReservationService().addRoom(room111);
         hotelResource.getReservationService().addRoom(room201);
+        hotelResource.getReservationService().addRoom(room301);
         hotelResource.getReservationService().addRoom(room777);
 
         // Create a reservation
